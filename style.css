@@ -1,4 +1,7 @@
 /************************************************* Default*/
+html {
+  scroll-behavior: smooth;
+}
 body {
     padding:0px;
     margin:0px;
@@ -29,6 +32,10 @@ body {
   }
 
 /*********************************Projects*/
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+}
 /**********************************Contact*/
 
 /********************************************Break Points*/
