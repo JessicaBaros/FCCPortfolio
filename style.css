@@ -1,10 +1,21 @@
 /************************************************* Default*/
+:root {
+  --primary-color:black;
+  --secondary-color:#0066FF;
+  --primaryword-color:white;
+  --secondaryword-color:black;
+  --firstaccent-color:yellow;
+  --secondaccent-color:red;
+}
 html {
   scroll-behavior: smooth;
 }
 body {
+    background: var(--primary-color);
     padding:0px;
     margin:0px;
+    color: var(--primaryword-color);
+    
   }
   /*******************************Navigation*/
   nav {
@@ -12,8 +23,10 @@ body {
     top:0px;
     width:100%;
     height:50px;
-    background:grey;
+    background: var(--secondary-color);
     z-index:1;
+    border-radius: 0% 0% 100% 100% / 0% 0% 0% 100%;
+    padding:10px;
   }
   nav ul {
     display:flex;
@@ -32,6 +45,18 @@ body {
   }
 
 /*********************************Projects*/
+.spacer {
+  aspect-ratio: 900/600;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.layer1 {
+  background-image: url('images/wave-haikei.svg');
+}
+
 .project-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
