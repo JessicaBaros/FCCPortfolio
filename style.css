@@ -123,6 +123,12 @@ figcaption {
 /**********************************Contact*/
 #contact {
   text-align: center;
+  
+}
+#contact div {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 #contact a {
   padding: 1em;
@@ -147,5 +153,9 @@ footer {
     }
     nav {
       font-size: 1em;
+    }
+    #contact a {
+      font-size: 2em;
+
     }
 }
