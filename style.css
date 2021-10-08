@@ -55,7 +55,7 @@ body {
   margin-top:50px;
   border-radius: 60px;
   box-shadow:
-  200px 10px 0 0px var(--firstaccent-color),
+  -40px 10px 0 0px var(--firstaccent-color),
   25px 20px 0 0px var(--secondaccent-color);
 }
 .slantedtextdown {
@@ -78,10 +78,22 @@ h2 {
   font-size: 3em;
 }
 /*********************************Projects*/
-
+#projects {
+  background: red;
+  border-radius: 0px 500px 500px 0px;
+  padding:25px 100px 100px 25px;
+  box-shadow:
+  0px 50px 0 0px var(--firstaccent-color),
+  0px 100px 0 0px var(--secondary-color);
+  margin-bottom:200px;
+}
 .project-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+}
+figure {
+  display: flex;
+  flex-direction: column;
 }
 /**********************************Contact*/
 
