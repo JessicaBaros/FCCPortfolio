@@ -6,6 +6,9 @@
   --secondaryword-color:black;
   --firstaccent-color:yellow;
   --secondaccent-color:red;
+
+  font-family: 'Montserrat', sans-serif;
+  
 }
 html {
   scroll-behavior: smooth;
@@ -16,6 +19,19 @@ body {
     margin:0px;
     color: var(--primaryword-color);
     
+  }
+  a {
+    text-decoration: none;
+    transition: all .9s ease;
+  }
+  a:visited {
+    color:inherit;
+  }
+  a:hover {
+    transform: scale(1.2);
+  }
+  hr {
+    margin:50px 0px 50px 0px
   }
   /*******************************Navigation*/
   nav {
@@ -30,7 +46,7 @@ body {
     box-shadow:
         200px 10px 0 0px var(--firstaccent-color),
         25px 20px 0 0px var(--secondaccent-color);
-    
+    font-size: 2em;
   }
   nav ul {
     display:flex;
@@ -39,7 +55,7 @@ body {
     margin:10px;
   }
   nav li {
-    padding:5px;
+    padding-right:2em;
   }
   /**************************Welcome-Section*/
   #welcome-section {
@@ -79,13 +95,14 @@ h2 {
 }
 /*********************************Projects*/
 #projects {
-  background: red;
+  background: var(--secondaccent-color);
   border-radius: 0px 500px 500px 0px;
   padding:25px 100px 100px 25px;
   box-shadow:
   0px 50px 0 0px var(--firstaccent-color),
   0px 100px 0 0px var(--secondary-color);
-  margin-bottom:200px;
+  text-align: center;
+  margin-bottom: 200px;
 }
 .project-grid {
   display: grid;
@@ -94,8 +111,29 @@ h2 {
 figure {
   display: flex;
   flex-direction: column;
+  background: var(--primaryword-color);
+  color: var(--secondaryword-color);
+  padding: 10px;
+  min-height: 300px;
+}
+figcaption {
+  font-size: 1.5em;
+  
 }
 /**********************************Contact*/
+#contact {
+  text-align: center;
+}
+#contact a {
+  padding: 1em;
+  font-size: 3em;
+
+}
+
+footer {
+  text-align: center;
+  margin-top: 5em;
+}
 
 /********************************************Break Points*/
 @media screen and (max-width: 425px) {
@@ -106,5 +144,8 @@ figure {
     h2 {
       font-size: 1.3em;
 
+    }
+    nav {
+      font-size: 1em;
     }
 }
