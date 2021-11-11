@@ -1,24 +1,8 @@
 h1 {
     text-align: center;
 }
-
 #filmList {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-}
-
-figure {
-    background-color: lavender;
-
-}
-img {
-    border: 20px solid lavender;
-
-}
-
-figcaption {
-    text-align: center;
-    font-size: xx-large;
-    padding-bottom: 20px;
 }
