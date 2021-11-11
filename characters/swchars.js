@@ -1,4 +1,5 @@
 import { people } from '../data/people.js';
+import { getLastNumber } from '../utils/index.js';
 
 const mainBody = document.querySelector ('body')
 const header = document.createElement('header')
@@ -56,12 +57,3 @@ function populateDom(characters) {
 });
 }
 
-function getLastNumber (url) {
-    let end = url.lastIndexOf('/')
-    let start = end - 2
-    
-    if(url.charAt(start)==='/') {
-        start++
-    }
-    return url.slice(start,end)
-}
