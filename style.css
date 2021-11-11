@@ -58,9 +58,12 @@ body {
     padding-right:2em;
   }
   /**************************Welcome-Section*/
-  #welcome-section {
+  header {
     position:relative;
-    top:80px;
+    top:60px;
+    
+  }
+  #welcome-section {
     height:100vh;
   }
 .slantedtextup {
