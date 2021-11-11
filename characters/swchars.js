@@ -1,5 +1,5 @@
 import { people } from '../data/people.js';
-import { getLastNumber } from '../utils/index.js';
+import { getLastNumber, removeChildren } from '../utils/index.js';
 
 const mainBody = document.querySelector ('body')
 const header = document.createElement('header')
@@ -39,9 +39,8 @@ console.log(maleCharacters)
 
 function populateDom(characters) {
 
-    while (mainContent.firstChild) {
-        mainContent.removeChild(mainContent.firstChild)
-    }
+    removeChildren(mainContent)
+    
     characters.forEach((element) => {
         
         const charFigure = document.createElement('figure')

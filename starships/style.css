@@ -2,8 +2,22 @@ header {
     text-align: center;
     margin: 60px;
 }
+
+main {
+    display: flex;
+}
 .navList li {
-    padding: 1rem;
+    
     list-style-type: none;
+    /*
     font-size: 1.3em;
+    padding: 1rem;
+    */
+}
+.displaySection {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
 }
