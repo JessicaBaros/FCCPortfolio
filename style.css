@@ -1,11 +1,11 @@
 /************************************************* Default*/
 :root {
   --primary-color:black;
-  --secondary-color:#0066FF;
+  --secondary-color:#4D52DE;
   --primaryword-color:white;
   --secondaryword-color:black;
-  --firstaccent-color:yellow;
-  --secondaccent-color:red;
+  --firstaccent-color:#FFBF6E;
+  --secondaccent-color:#56AA69;
 
   font-family: 'Montserrat', sans-serif;
   

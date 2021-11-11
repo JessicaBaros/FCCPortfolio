@@ -3,3 +3,8 @@ main {
     flex-wrap: wrap;
     justify-content: center;
 }
+
+header {
+    margin: 60px;
+    text-align: center;
+}
