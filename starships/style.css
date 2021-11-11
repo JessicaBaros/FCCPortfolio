@@ -2,3 +2,8 @@ header {
     text-align: center;
     margin: 60px;
 }
+.navList li {
+    padding: 1rem;
+    list-style-type: none;
+    font-size: 1.3em;
+}
