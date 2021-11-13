@@ -19,10 +19,10 @@ main {
 .navList li {
     
     list-style-type: none;
-    /*
+    margin-left:3em;
     font-size: 1.3em;
-    padding: 1rem;
-    */
+ 
+    
 }
 .displaySection {
     width: 100%;
@@ -55,4 +55,12 @@ nav {
   }
   nav li {
     padding-right:2em;
+  }
+
+
+  .box {
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
   }
