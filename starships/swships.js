@@ -29,6 +29,7 @@ function populateShipView (shipData) {
     shipImage.src = `https://starwars-visualguide.com/assets/img/starships/${shipNum}.jpg`
     shipImage.addEventListener('error', () => {
         shipImage.hidden = true
+        
     })
 
     shipView.appendChild(shipImage)

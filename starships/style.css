@@ -1,10 +1,20 @@
-header {
+html {
+    background-color: var(--primary-color);
+}
+.myheader {
     text-align: center;
     margin: 60px;
+    font-family: 'montserrat', sans-serif;
+    font-weight: bold;
+}
+.myheader h1 {
+    font-weight: bold;
 }
 
 main {
     display: flex;
+    font-family: 'montserrat', sans-serif;
+
 }
 .navList li {
     
@@ -21,3 +31,28 @@ main {
     align-items: center;
     
 }
+
+nav {
+    position:fixed;
+    top:0px;
+    width:100%;
+    height:80px;
+    background: var(--secondary-color);
+    z-index:1;
+    border-radius: 50px;
+    padding:10px;
+    box-shadow:
+        200px 10px 0 0px var(--firstaccent-color),
+        25px 20px 0 0px var(--secondaccent-color);
+    font-size: 2em;
+    font-family:'montserrat', sans-serif;
+  }
+  nav ul {
+    display:flex;
+    list-style:none;
+    justify-content:flex-end;
+    margin:10px;
+  }
+  nav li {
+    padding-right:2em;
+  }

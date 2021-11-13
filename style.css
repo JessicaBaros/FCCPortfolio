@@ -1,3 +1,4 @@
+
 /************************************************* Default*/
 :root {
   --primary-color:black;
@@ -13,7 +14,7 @@
 html {
   scroll-behavior: smooth;
 }
-body {
+.mybody {
     background: var(--primary-color);
     padding:0px;
     margin:0px;
