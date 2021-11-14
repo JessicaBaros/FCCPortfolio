@@ -14,7 +14,7 @@
 html {
   scroll-behavior: smooth;
 }
-.mybody {
+body {
     background: var(--primary-color);
     padding:0px;
     margin:0px;
@@ -109,8 +109,9 @@ h2 {
   margin-bottom: 200px;
 }
 .project-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  
 }
 figure {
   display: flex;
@@ -118,15 +119,18 @@ figure {
   background: var(--primaryword-color);
   color: var(--secondaryword-color);
   padding: 10px;
-  
-}
+}  
 figure img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
   
-  max-height:400px;
+
 }
 figcaption {
-  font-size: 1.5em;
+  font-size: 1.2em;
   text-align: center;
+  padding:0px;
   
 }
 /**********************************Contact*/
