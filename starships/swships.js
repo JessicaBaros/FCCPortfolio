@@ -18,10 +18,11 @@ function populateNav(starships) {
             anchorWrap.href = '#'
         let listItem = document.createElement('li')
         listItem.textContent = starship.name
+        
         anchorWrap.addEventListener('click' , ()=> {
             populateShipView(starship)
         })
-
+        
         anchorWrap.appendChild(listItem)
         navList.appendChild(anchorWrap)
     });
@@ -42,3 +43,4 @@ function populateShipView (shipData) {
 
     shipView.appendChild(shipImage)
 }
+
