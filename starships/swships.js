@@ -19,7 +19,7 @@ function populateNav(starships) {
         let listItem = document.createElement('li')
         listItem.textContent = starship.name
         
-        anchorWrap.addEventListener('click' , ()=> {
+        anchorWrap.addEventListener('mouseover' , ()=> {
             populateShipView(starship)
         })
         
