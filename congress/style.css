@@ -4,11 +4,9 @@ h1 {
 
     text-align: center;
 }
-main {
-    display: flex;
-    justify-content:space-evenly;
-}
+
 .senators {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
