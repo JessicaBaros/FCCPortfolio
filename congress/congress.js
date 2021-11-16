@@ -15,7 +15,7 @@ function SimplifedSenators(senatorArray){
             party: senator.party,
             gender: senator.gender,
             party: senator.party,
-            imgURL: `https://www.govtrack.us/static/legislator-photos/${senator.govtrack_id}-100px.jpeg`
+            imgURL: `https://www.govtrack.us/static/legislator-photos/${senator.govtrack_id}.jpeg`
             
         }
     })
