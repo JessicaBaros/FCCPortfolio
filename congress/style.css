@@ -10,3 +10,13 @@ h1 {
     flex-wrap: wrap;
     justify-content: center;
 }
+figure {
+    width: 100px;
+}
+figure img {
+    width: 100px;
+    height:100px;
+}
+figcaption {
+    font-size: 1rem;
+}

@@ -20,7 +20,7 @@ function SimplifedSenators(senatorArray){
         }
     })
 }
-populateSenatorDiv(SimplifedSenators(senators))
+
 
 function populateSenatorDiv(simpleSenators){
     simpleSenators.forEach(senator => {
@@ -37,3 +37,9 @@ function populateSenatorDiv(simpleSenators){
     });
 
 }
+populateSenatorDiv(SimplifedSenators(senators))
+
+const filterSenators = (prop, value) =>  SimplifedSenators(senators).filter(senator =>senator[prop] === value)
+
+
+console.log(filterSenators('gender', 'F'))
