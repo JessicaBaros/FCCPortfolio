@@ -4,8 +4,8 @@ const senatorDiv = document.querySelector('.senators')
 
 //Simplified Senators JS File
 
-function SimplifedSenators(senatorArray){
-    return senatorArray.map(senator => {
+function SimplifiedSenators(){
+    return senators.map(senator => {
         let middleName= senator.middle_name ? ` ${senator.middle_name} `: ` `
         let suffex = senator.suffex ? `${senator.suffex}` : ``
         
@@ -15,6 +15,7 @@ function SimplifedSenators(senatorArray){
             party: senator.party,
             gender: senator.gender,
             party: senator.party,
+            seniority: parseInt(senator.seniority, 10),
             imgURL: `https://www.govtrack.us/static/legislator-photos/${senator.govtrack_id}.jpeg`
             
         }
@@ -37,9 +38,11 @@ function populateSenatorDiv(simpleSenators){
     });
 
 }
-populateSenatorDiv(SimplifedSenators(senators))
 
-const filterSenators = (prop, value) =>  SimplifedSenators(senators).filter(senator =>senator[prop] === value)
+const filterSenators = (prop, value) =>  SimplifiedSenators().filter(senator =>senator[prop] === value)
 
+const mostSeniorSenator = SimplifiedSenators().reduce((acc, senators) => acc.seniority > senators.seniority ? acc : senators)
 
-console.log(filterSenators('gender', 'F'))
+console.log(mostSeniorSenator)
+
+populateSenatorDiv(SimplifiedSenators())
