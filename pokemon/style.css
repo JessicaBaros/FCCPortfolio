@@ -45,14 +45,27 @@ header {
  
 
 .front {
-    background-color: #2a75bb;
+    background-color:var(--secondary-color);
+    border: 10px solid var(--secondaccent-color) ;
+    
 }
 .back {
-    background-color: #c7a008;
+    background-color:var(--secondaccent-color);
+    border: 10px solid var(--firstaccent-color);
     transform: rotateY(180deg);
     padding: 1.5rem;
 }
 figure img {
     width: 200px;
     height: 200px;
+    filter: drop-shadow(30px 1px 10px rgba(43,43,43,.6));
+}
+figcaption {
+    color: var(--primaryword-color);
+}
+ul {
+    list-style: none;
+    padding:20px;
+    padding-left: 0%;
+
 }

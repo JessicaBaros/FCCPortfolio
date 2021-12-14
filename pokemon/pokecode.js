@@ -12,20 +12,18 @@ function getAPIData(url) {
 }
 
 function loadPokemon(offset = 0, limit=25) {
-    
-    getAPIData(`https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`).then(async(data) => {
+    removeChildren(pokeGrid)
+    getAPIData(
+        `https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`,).then(async(data) => {
    
     for (const pokemon of data.results) {
-        await getAPIData(pokemon.url).then((pokeData) => populatePokeCards(pokeData))
+        await getAPIData(pokemon.url).then((pokeData) => populatePokeCard(pokeData))
     }
 })
 }
 const pokeGrid =document.querySelector('.pokeGrid')
 const loadButton = document.querySelector('.loadButton')
-loadButton.addEventListener('click', () => {
-    removeChildren(pokeGrid)
-    loadPokemon()
-})
+loadButton.addEventListener('click', () => loadPokemon())
 const newButton = document.querySelector('.newPokemon')
 newButton.addEventListener('click', () => {
     let pokeName = prompt ('What will you name your new Pokemon?')
@@ -33,20 +31,21 @@ newButton.addEventListener('click', () => {
     let pokeWeight = prompt ('What is the Weight of your Pokemon')
     let pokeAbilities = prompt('And your abilities? (Use a comma Separated List')
 
-
     let newPokemon = new Pokemon(
         pokeName,
         pokeHeight,
         pokeWeight, 
         getAbilitiesArray(pokeAbilities),
     )
-    console.log(newPokemon)
-    populatePokeCards(newPokemon)
+    
+    
+    populatePokeCard(newPokemon)
 })
 const morePokemon = document.querySelector('.morePokemon')
 morePokemon.addEventListener('click', () => {
     let startPoint = prompt ('Which Pokemon ID do we start with?')
     let howMany = prompt('How many more pokemon do you want to see?')
+    removeChildren(pokeGrid)
     loadPokemon(startPoint, howMany)
 
 })
@@ -62,7 +61,7 @@ function getAbilitiesArray(commaString) {
     })
 }
 
-function populatePokeCards(singlePokemon) {
+function populatePokeCard(singlePokemon) {
     const pokeScene = document.createElement('div')
         pokeScene.className = 'scene'
     const pokeCard = document.createElement('div')
@@ -93,10 +92,22 @@ function populateCardFront(pokemon) {
         return pokeFront
 }
 
+function typesBackground(pokemon, card) {
+    let pokeType1 = pokemon.types[0].type.name
+    let pokeType2 = pokemon.types[1]?.type.name
+    if (!pokeType2) {
+        card.style.setProperty('background', getPokeTypeColor(pokeType1))
+    } else {
+        card.style.setProperty('background',
+        `liniar-gradient(${getPokeTypeColor(pokeType1)}, ${getPokeTypeColor(pokeType2)})`)
+    }
+}
+
+
 function populateCardBack(pokemon) {
     const pokeBack = document.createElement('div')
         pokeBack.className = 'cardFace back'
-        const label = document.createElement('h4')
+        const label = document.createElement('h3')
         label.textContent = 'Abilities:'
         const abilityList = document.createElement('ul')
         
@@ -106,18 +117,62 @@ function populateCardBack(pokemon) {
             abilityItem.textContent = ability.ability.name
             abilityList.appendChild(abilityItem)
         })
+
         pokeBack.appendChild(label)
         pokeBack.appendChild(abilityList)
+    
+
+        typesBackground(pokemon, pokeBack)
+
         return pokeBack
 }
 
 class Pokemon {
     constructor(name, height, weight, abilities) {
-        this.id=9001,
+        this.id=100,
         this.name = name,
         this.height = height,
         this.weight = weight
         this.abilities = abilities
     }
+}
+
+function getPokeTypeColor(pokeType) {
+    let color 
+    switch (pokeType) {
+        case 'grass':
+            color = '#7AC74C'
+            break
+            case 'fire':
+            color = '#EE8130'
+            break
+            case 'water':
+            color = '#6390F0'
+            break
+            case 'bug':
+            color = '#A6B91A'
+            break
+            case 'normal':
+            color = '#A8A77A'
+            break
+            case 'flying':
+            color = '#A98FF3'
+            break
+            case 'electric':
+            color = '#F7D02C'
+            break
+            case 'psychic':
+            color = '#F95587'
+            break
+            case 'poison':
+            color = '#A33EA1'
+            break
+            case 'ground':
+            color = '#E2BF65'
+            break
+            default:
+            color = 'orange'
+    }
+    return color
 }
 
