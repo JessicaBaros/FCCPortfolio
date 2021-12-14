@@ -48,7 +48,7 @@ body {
         200px 10px 0 0px var(--firstaccent-color),
         25px 20px 0 0px var(--secondaccent-color);
     font-size: 2em;
-  }
+    text-decoration: none  white;  }
   nav ul {
     display:flex;
     list-style:none;
