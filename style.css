@@ -58,6 +58,9 @@ body {
   nav li {
     padding-right:2em;
   }
+  a {
+    text-decoration: none;
+  }
   /**************************Welcome-Section*/
   header {
     position:relative;
