@@ -13,11 +13,12 @@ header {
 .pokeGrid {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
     margin-top: 5em;
 }
 .scene {
-    width: 200px;
-    height: 260px;
+    width: 300px;
+    height: 360px;
     perspective: 600px;
     margin:1em;
     
@@ -56,16 +57,34 @@ header {
     padding: 1.5rem;
 }
 figure img {
-    width: 200px;
-    height: 200px;
+    width: 300px;
+    height: 300px;
     filter: drop-shadow(30px 1px 10px rgba(43,43,43,.6));
 }
 figcaption {
     color: var(--primaryword-color);
+    z-index: 1;
+    font-size: 1.5em;
+    background-color: rgba(77, 82, 222, .6);
 }
 ul {
     list-style: none;
     padding:20px;
     padding-left: 0%;
+
+}
+
+figure:hover {
+    background: var(--secondary-color);
+  box-shadow:
+      20px 5px 0 0px var(--firstaccent-color),
+      5px 15px 0 0px var(--secondary-color);
+      transition: all .9s ease;
+}
+figure img:hover {
+    transform: scale(1.4);
+    transition: all .9s ease;
+    transition-timing-function: ease-out;
+    transition-timing-function: ease-in;
 
 }
