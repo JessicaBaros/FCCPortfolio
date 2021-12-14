@@ -1,5 +1,6 @@
 import { senators } from "../data/senators.js";
 import { representatives } from "../data/representatives.js";
+import { removeChildren } from "../utils/index.js";
 
 const members = [...senators, ...representatives]
 
@@ -21,12 +22,15 @@ function SimplifiedMembers(chamberFilter){
             seniority: +senator.seniority,
             imgURL: `https://www.govtrack.us/static/legislator-photos/${senator.govtrack_id}.jpeg`,
             missedVotesPct: senator.missed_votes_pct,
-            loyalty: senator.votes_with_party_pct
+            loyalty: senator.votes_with_party_pct,
+            state: senator.state,
+            short_title: senator.short_title
         }
     })
 }
 
 function populateSenatorDiv(simpleSenators){
+    removeChildren(senatorDiv)
     simpleSenators.forEach(senator => {
         const senFigure = document.createElement('figure')
         const figImg = document.createElement('img')
@@ -40,10 +44,6 @@ function populateSenatorDiv(simpleSenators){
         senatorDiv.appendChild(senFigure)
     });
 }
-
-//const filterSenators = (prop, value) =>  SimplifiedMembers().filter(senator =>senator[prop] === value)
-
-//console.log(filterSenators('gender','F'))
 
 const mostSeniorMember = SimplifiedMembers().reduce((acc, senators) => acc.seniority > senators.seniority ? acc : senators)
 
@@ -68,24 +68,28 @@ loyaltyHeading.appendChild(cowardList)
 
 populateSenatorDiv(SimplifiedMembers())
 
+const filterSenators = (prop, value) =>  SimplifiedMembers().filter(senator =>senator[prop] === value)
+
+
+
 //getting buttons to work
 const buttons = document.querySelector ('#buttons')
 
 const senatorButton = document.createElement('button')
     senatorButton.textContent = "Senators"
-    senatorButton.addEventListener('click', () => console.log("Click Win"))
+    senatorButton.addEventListener('click', () => populateSenatorDiv(filterSenators('short_title','Sen.')))
 
 const representativeButton = document.createElement('button')
     representativeButton.textContent = "Representatative"
-    representativeButton.addEventListener('click', () => console.log("Click Win"))
+    representativeButton.addEventListener('click', () => populateSenatorDiv(filterSenators('short_title','Rep.')))
 
 const repButton = document.createElement('button')
     repButton.textContent = "Republican"
-    repButton.addEventListener('click', () => console.log("Click Win"))
+    repButton.addEventListener('click', () => populateSenatorDiv(filterSenators('party','R')))
 
 const demButton = document.createElement('button')
     demButton.textContent = "Democrat"
-    demButton.addEventListener('click', () => console.log(democrats))
+    demButton.addEventListener('click', () => populateSenatorDiv(filterSenators('party','D')))
 
 buttons.appendChild(senatorButton)
 buttons.appendChild(representativeButton)
