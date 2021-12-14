@@ -5,23 +5,43 @@ header {
 .scene {
     width: 200px;
     height: 300px;
+    perspective: 600px;
+    
 }
-
+ .pokeGrid {
+     display: flex;
+     flex-wrap: wrap;
+     margin: 20px;
+ }
 .card {
     width: 100%;
     height: 100%;
+    position: relative; 
+    transition: transform 1s;
+    transform-style: preserve-3d;
+    cursor: pointer;
     
 }
 
+.card.is-flipped {
+    transform:rotateY(180deg);
+}
 .cardFace {
     width: 100%;
     height: 100%;
-    
+    position: absolute;
+    backface-visibility: hidden;
 }
+ figure img {
+     width: 200px;
+     height: 200px;
+ }
 
 .front {
     background-color: #2a75bb;
 }
 .back {
     background-color: #c7a008;
+    transform: rotateY(180deg);
 }
+
