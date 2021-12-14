@@ -67,3 +67,30 @@ loyaltyHeading.appendChild(cowardList)
 
 
 populateSenatorDiv(SimplifiedMembers())
+
+//getting buttons to work
+const buttons = document.querySelector ('#buttons')
+
+const senatorButton = document.createElement('button')
+    senatorButton.textContent = "Senators"
+    senatorButton.addEventListener('click', () => console.log("Click Win"))
+
+const representativeButton = document.createElement('button')
+    representativeButton.textContent = "Representatative"
+    representativeButton.addEventListener('click', () => console.log("Click Win"))
+
+const repButton = document.createElement('button')
+    repButton.textContent = "Republican"
+    repButton.addEventListener('click', () => console.log("Click Win"))
+
+const demButton = document.createElement('button')
+    demButton.textContent = "Democrat"
+    demButton.addEventListener('click', () => console.log(democrats))
+
+buttons.appendChild(senatorButton)
+buttons.appendChild(representativeButton)
+buttons.appendChild(repButton)
+buttons.appendChild(demButton)
+
+
+

@@ -10,21 +10,3 @@ header {
     flex-direction: column;
     align-items: center;
 }
-button{
-    background:var(--secondaccent-color);
-    color:var(--primaryword-color);
-    border:none;
-    padding:1rem;
-    margin:1rem;
-    font-size:1.2rem;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 600;
-    transition:800ms ease all;
-    border-radius: 50px;
-  }
-button:hover {
-    background: var(--secondary-color);
-    box-shadow:
-        20px 5px 0 0px var(--firstaccent-color),
-        5px 15px 0 0px var(--secondaccent-color);
-}
